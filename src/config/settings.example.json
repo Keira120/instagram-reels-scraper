@@ -1,0 +1,9 @@
+# Logging level: DEBUG, INFO, WARNING, ERROR
+IRS_LOG_LEVEL=INFO
+
+# Rate limit for outgoing HTTP requests (requests per second)
+IRS_RATE_LIMIT_PER_SECOND=1.0
+
+# Optional: if you later extend the client to use authenticated requests,
+# you can store secrets here (not used by the open-source client yet).
+IG_SESSION_ID=your_instagram_session_cookie_here
