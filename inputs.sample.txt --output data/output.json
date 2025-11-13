@@ -1,0 +1,17 @@
+thon API
+You can also import the core pieces in your own Python code:
+pythonfrom pathlib import Path
+
+from instagram_reels.client import InstagramClient
+from instagram_reels.parser import parse_reel_payload
+from pipelines.runner import run_pipeline
+
+client = InstagramClient()
+raw = client.fetch_reel_metadata("https://www.instagram.com/p/DDb5uxNyWa9/")
+reel = parse_reel_payload(raw)
+print(reel.dict())
+
+results = run_pipeline(
+["https://www.instagram.com/p/DDb5uxNyWa9/"],
+output_file=Path("data/output.json"),
+)
